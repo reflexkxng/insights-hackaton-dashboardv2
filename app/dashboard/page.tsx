@@ -210,6 +210,7 @@ export default function Dashboard() {
   // Debug amenities data changes
   useEffect(() => {
     console.log('Amenities data state changed:', amenitiesData)
+    
   }, [amenitiesData])
 
   const updateCardData = (cardType: keyof CardData, data: Partial<CardData[keyof CardData]>) => {

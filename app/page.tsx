@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import axios from 'axios'
+import { fetchMockInsights } from "./utils/mockApi";
 
 export default function LandingPage() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -11,50 +11,36 @@ export default function LandingPage() {
   const router = useRouter()
 
   const handleSearch = async () => {
-    const query = searchQuery.trim()
-    if (!query) return
+  const query = searchQuery.trim();
+  if (!query) return;
 
-    setIsSearching(true)
-    setError('')
+  setIsSearching(true);
+  setError('');
 
+  try {
+    console.log('Searching for city (mock):', query);
+
+    // 🔹 Use mock data instead of axios to localhost
+    const data = await fetchMockInsights(query);
+
+    console.log('Mock data loaded:', data);
+
+    // Navigate to dashboard with encoded mock data
     try {
-      console.log('Searching for city:', query)
-
-      // Use LiveWise insights endpoint to get comprehensive data
-      const response = await axios.post('http://localhost:3001/api/livewise-insights', {
-        location: query
-      })
-      
-      console.log('API response:', response.data)
-
-      if (response.data.success) {
-        // Navigate to dashboard with the LiveWise data
-        try {
-          const jsonData = JSON.stringify(response.data.data)
-          const encodedData = encodeURIComponent(jsonData)
-          router.push(`/dashboard?q=${encodeURIComponent(query)}&data=${encodedData}`)
-        } catch (encodingError) {
-          console.error('Error encoding data for URL:', encodingError)
-          // Fallback: navigate without data parameter
-          router.push(`/dashboard?q=${encodeURIComponent(query)}`)
-        }
-      } else {
-        throw new Error('LiveWise insights failed')
-      }
-      
-    } catch (error: any) {
-      console.error('Error fetching data:', error)
-      setIsSearching(false)
-      
-      if (error.response?.status === 400) {
-        setError('Please enter a valid city name')
-      } else if (error.response?.status === 404) {
-        setError('City not found. Try "New York", "London", or "Tokyo"')
-      } else {
-        setError('Search failed. Please try again.')
-      }
+      const jsonData = JSON.stringify(data);
+      const encodedData = encodeURIComponent(jsonData);
+      router.push(`/dashboard?q=${encodeURIComponent(query)}&data=${encodedData}`);
+    } catch (encodingError) {
+      console.error('Error encoding data for URL:', encodingError);
+      router.push(`/dashboard?q=${encodeURIComponent(query)}`);
     }
+  } catch (err) {
+    console.error('Error loading mock data:', err);
+    setError('Failed to load insights.');
+  } finally {
+    setIsSearching(false);
   }
+}
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
