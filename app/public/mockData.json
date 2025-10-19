@@ -1,0 +1,152 @@
+{
+  "weather": {
+    "temp": 293.96,
+    "feels_like": 294.66,
+    "temp_min": 293.96,
+    "temp_max": 293.96,
+    "humidity": 98,
+    "main": "Clouds",
+    "description": "overcast clouds"
+  },
+  "crime": {
+    "area": "St. Andrew South",
+    "metrics": {
+      "murder": {
+        "value_2025": 61,
+        "change_percent": -20.8,
+        "direction": "down",
+        "rank": 1
+      },
+      "shooting": {
+        "value_2025": 69,
+        "change_percent": -17.9,
+        "direction": "down",
+        "rank": 1
+      },
+      "persons_injured": {
+        "value_2025": 52,
+        "change_percent": -35.8,
+        "direction": "down",
+        "rank": 1
+      },
+      "rape": {
+        "value_2025": 11,
+        "change_percent": -50,
+        "direction": "down",
+        "rank": 8
+      },
+      "robbery": {
+        "value_2025": 42,
+        "change_percent": 82.6,
+        "direction": "up",
+        "rank": 6
+      },
+      "break_in": {
+        "value_2025": 40,
+        "change_percent": 53.8,
+        "direction": "up",
+        "rank": 7
+      },
+      "grand_total": {
+        "value_2025": 223,
+        "change_percent": -3.9,
+        "direction": "down",
+        "rank": 2
+      }
+    },
+    "overall": {
+      "method": "average_of_ranks",
+      "score": 3.71,
+      "rank": 2
+    },
+    "rank_basis_count": 19
+  },
+  "transport": {
+    "origin_name": "Kingston",
+    "dest_name": "Downtown Kingston",
+    "fare": "J$150",
+    "typical_time": "45 minutes"
+  },
+  "amenities": {
+    "amenities": [
+      {
+        "name": "Downtown Plaza",
+        "type_of_place": "Shopping Center"
+      },
+      {
+        "name": "Kingston General Hospital",
+        "type_of_place": "Hospital"
+      },
+      {
+        "name": "Central Park Gym",
+        "type_of_place": "Gym"
+      },
+      {
+        "name": "Island Restaurant",
+        "type_of_place": "Restaurant"
+      },
+      {
+        "name": "Kingston High School",
+        "type_of_place": "School"
+      }
+    ]
+  },
+  "news": {
+    "items": [
+      {
+        "id": 1,
+        "title": "Kingston Community Center Opens New Youth Programs",
+        "content": "Local community center launches after-school programs for teenagers, focusing on technology and sports.",
+        "category": "Community",
+        "priority": "medium",
+        "date": "2025-10-19",
+        "timestamp": "2025-10-19T00:00:00"
+      },
+      {
+        "id": 2,
+        "title": "Traffic Improvements Planned for Main Street",
+        "content": "City council approves $2M budget for road widening and traffic light upgrades in downtown area.",
+        "category": "Infrastructure",
+        "priority": "high",
+        "date": "2025-10-19",
+        "timestamp": "2025-10-19T00:00:00"
+      },
+      {
+        "id": 3,
+        "title": "New Restaurant Opens in Business District",
+        "content": "Popular chef opens Caribbean fusion restaurant, creating 25 new jobs for local residents.",
+        "category": "Business",
+        "priority": "low",
+        "date": "2025-10-19",
+        "timestamp": "2025-10-19T00:00:00"
+      },
+      {
+        "id": 4,
+        "title": "Local School Receives Technology Grant",
+        "content": "Elementary school awarded $50K grant for computer lab upgrades and digital learning tools.",
+        "category": "Education",
+        "priority": "medium",
+        "date": "2025-10-19",
+        "timestamp": "2025-10-19T00:00:00"
+      },
+      {
+        "id": 5,
+        "title": "Weather Alert: Heavy Rain Expected",
+        "content": "Met Office issues weather warning for heavy rainfall and potential flooding in low-lying areas.",
+        "category": "Weather",
+        "priority": "high",
+        "date": "2025-10-19",
+        "timestamp": "2025-10-19T00:00:00"
+      },
+      {
+        "id": 6,
+        "title": "Local Sports Team Wins Regional Championship",
+        "content": "High school basketball team brings home regional trophy after defeating rivals in overtime.",
+        "category": "Sports",
+        "priority": "low",
+        "date": "2025-10-19",
+        "timestamp": "2025-10-19T00:00:00"
+      }
+    ]
+  }
+}
